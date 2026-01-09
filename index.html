@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
         rel="stylesheet">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,17 +19,20 @@
 
 <body>
 
+    <!-- Background Canvas -->
+    <canvas id="bubble-canvas"></canvas>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <span class="element-symbol">Lr</span> Laxman.
+                <a href="/"><i class="fa-solid fa-flask"></i> Laxman Rana</a>
             </div>
             <ul class="nav-links">
-                <li><a href="#hero" class="data-link" data-text="HOME">HOME</a></li>
-                <li><a href="#about" class="data-link" data-text="PROFILE">PROFILE</a></li>
-                <li><a href="#portfolio" class="data-link" data-text="RESEARCH">RESEARCH</a></li>
-                <li><a href="#contact" class="data-link" data-text="CONTACT">CONTACT</a></li>
+                <li><a href="#hero">Lab</a></li>
+                <li><a href="#about">Scientist</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Collaborate</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -42,87 +45,105 @@
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
         <div class="container hero-container">
-            <div class="hero-content">
-                <div class="atomic-number">103</div>
-                <h1 class="glitch" data-text="LAXMAN RANA">LAXMAN RANA</h1>
-                <h2 class="subtitle">B.Sc. Chemistry <span class="accent">//</span> Final Year</h2>
-                <div class="university-tag">Tribhuvan University</div>
-
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-neon">INITIATE_CONTACT()</a>
+            <div class="hero-text">
+                <span class="status-badge"><i class="fa-solid fa-circle-notch fa-spin"></i> Analyzing Compounds</span>
+                <h1 class="main-title">Laxman <br> <span class="highlight">Rana</span></h1>
+                <p class="subtitle">Final Year BSc Chemistry Student at Tribhuvan University. Exploring the fluid
+                    dynamics of organic and inorganic matter.</p>
+                <div class="actions">
+                    <a href="#contact" class="btn btn-primary">Enter Lab</a>
+                    <a href="#research" class="btn btn-glass">View Experiments</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="benzene-stack">
-                    <div class="hex"></div>
-                    <div class="hex"></div>
-                    <div class="hex"></div>
+                <div class="flask-container">
+                    <div class="flask-body">
+                        <div class="liquid"></div>
+                        <div class="bubbles">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section glass-section">
         <div class="container">
-            <h2 class="section-title">SUBJECT_PROFILE</h2>
-            <div class="about-wrapper">
-                <div class="hex-profile-container">
-                    <div class="hex-image">
-                        <i class="fa-solid fa-user-astronaut"></i>
+            <div class="section-head">
+                <h2>The Scientist</h2>
+            </div>
+            <div class="about-content">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Laxman Rana</h3>
+                        <p class="role">BSc Chemistry Student</p>
+                        <div class="uni-badge">
+                            <i class="fa-solid fa-university"></i> Tribhuvan University
+                        </div>
                     </div>
                 </div>
-                <div class="about-data">
-                    <div class="data-card">
-                        <h3><i class="fa-solid fa-graduation-cap"></i> EDUCATION</h3>
-                        <p>Currently pursuing Bachelor of Science (BSc) in Chemistry at <strong>Tribhuvan
-                                University</strong>. Final Year Student.</p>
-                    </div>
-                    <div class="data-card">
-                        <h3><i class="fa-solid fa-atom"></i> FOCUS</h3>
-                        <p>Passionate about Organic Synthesis, Analytical Chemistry, and Molecular Dynamics.</p>
-                    </div>
-                    <div class="data-card">
-                        <h3><i class="fa-solid fa-location-dot"></i> COORDINATES</h3>
-                        <p>Kathmandu - 15, Dallu</p>
+                <div class="bio-glass">
+                    <h3>Focus Area</h3>
+                    <p>My work revolves around the synthesis of organic compounds and the study of their reaction
+                        mechanisms. I am deeply interested in how molecular structures influence physical properties.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-num">4th</span>
+                            <span class="stat-label">Year</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">BSc</span>
+                            <span class="stat-label">Degree</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">TU</span>
+                            <span class="stat-label">Univ</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio/Research Section -->
-    <section id="portfolio" class="section bg-void">
+    <!-- Research Section -->
+    <section id="research" class="section">
         <div class="container">
-            <h2 class="section-title">RESEARCH_MODULES</h2>
-            <div class="periodic-grid">
-                <!-- Project 1 -->
-                <div class="element-card">
-                    <div class="atomic-num">06</div>
-                    <div class="symbol">Og</div>
-                    <div class="name">Organic</div>
-                    <div class="details">Synthesis & Reactions</div>
+            <div class="section-head">
+                <h2>Research Areas</h2>
+            </div>
+            <div class="research-grid">
+                <!-- Card 1 -->
+                <div class="research-card">
+                    <div class="card-icon organic">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3>Organic Chemistry</h3>
+                    <p>Synthesis of carbon-based compounds.</p>
+                    <div class="chem-formula">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></div>
                 </div>
-                <!-- Project 2 -->
-                <div class="element-card highlight">
-                    <div class="atomic-num">26</div>
-                    <div class="symbol">In</div>
-                    <div class="name">Inorganic</div>
-                    <div class="details">Coordination Complexes</div>
+                <!-- Card 2 -->
+                <div class="research-card">
+                    <div class="card-icon inorganic">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3>Inorganic Chemistry</h3>
+                    <p>Organometallic & Coordination complexes.</p>
+                    <div class="chem-formula">[Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup></div>
                 </div>
-                <!-- Project 3 -->
-                <div class="element-card">
-                    <div class="atomic-num">47</div>
-                    <div class="symbol">Bc</div>
-                    <div class="name">BioChem</div>
-                    <div class="details">Metabolic Pathways</div>
-                </div>
-                <!-- Project 4 (Placeholder) -->
-                <div class="element-card">
-                    <div class="atomic-num">01</div>
-                    <div class="symbol">An</div>
-                    <div class="name">Analytical</div>
-                    <div class="details">Spectroscopy</div>
+                <!-- Card 3 -->
+                <div class="research-card">
+                    <div class="card-icon biochem">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3>Biochemistry</h3>
+                    <p>Enzymatic processes & metabolic pathways.</p>
+                    <div class="chem-formula">ATP</div>
                 </div>
             </div>
         </div>
@@ -131,22 +152,24 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">TRANSMISSION_LINK</h2>
-            <div class="contact-terminal">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
+            <div class="contact-glass-panel">
+                <div class="contact-header">
+                    <h2>Collaborate</h2>
+                    <p>Open for research opportunities and academic collaboration.</p>
                 </div>
-                <div class="terminal-body">
-                    <p><span class="prompt">user@laxman:~$</span> connect --method email</p>
-                    <p class="response">laxmanrana2200@gmail.com</p>
-
-                    <p><span class="prompt">user@laxman:~$</span> connect --method phone</p>
-                    <p class="response">9843284645</p>
-
-                    <p><span class="prompt">user@laxman:~$</span> locate --target lab</p>
-                    <p class="response">Kathmandu - 15, Dallu</p>
+                <div class="contact-links">
+                    <a href="mailto:laxmanrana2200@gmail.com" class="c-link">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <span>laxmanrana2200@gmail.com</span>
+                    </a>
+                    <a href="tel:9843284645" class="c-link">
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                        <span>9843284645</span>
+                    </a>
+                    <div class="c-link">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <span>Kathmandu - 15, Dallu</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,7 +177,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>SYSTEM_STATUS: ONLINE | &copy; 2026 Laxman Rana</p>
+        <p>Laxman Rana &copy; 2026 | Exploring Chemistry</p>
     </footer>
 
     <!-- Scripts -->

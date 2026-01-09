@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close menu when clicking a link
     links.forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
@@ -21,17 +20,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sticky Navbar shadow effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
-        } else {
-            navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
-        }
-    });
+    // Bubble Canvas Animation
+    const canvas = document.getElementById('bubble-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
 
-    // Smooth scroll for anchor links
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Bubble {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 100;
+                this.speed = Math.random() * 1 + 0.5;
+                this.radius = Math.random() * 4 + 1;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+
+            update() {
+                this.y -= this.speed;
+                // Wobble
+                this.x += Math.sin(this.y * 0.01) * 0.2;
+
+                // Reset if goes off screen
+                if (this.y < -50) {
+                    this.y = height + Math.random() * 100;
+                    this.x = Math.random() * width;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        // Init bubbles
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Bubble());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
